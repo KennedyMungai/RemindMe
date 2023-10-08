@@ -4,6 +4,7 @@ import prisma from "@/lib/prisma";
 import { wait } from "@/lib/wait";
 import { currentUser } from "@clerk/nextjs";
 import { Suspense } from "react";
+import { HiFaceFrown } from "react-icons/hi2";
 
 export default async function Home() {
   return (
@@ -54,9 +55,16 @@ async function CollectionList() {
 
   if (collections.length === 0) {
     return (
-      <Alert>
-        <AlertTitle>There are no collections yet</AlertTitle>
-        <AlertDescription>Create a collection to get started</AlertDescription>
+      <Alert className="flex flex-col gap-4 justify-center">
+        <div className="">
+          <HiFaceFrown className="text-4xl" />
+        </div>
+        <div className="">
+          <AlertTitle>There are no collections yet</AlertTitle>
+          <AlertDescription>
+            Create a collection to get started
+          </AlertDescription>
+        </div>
       </Alert>
     );
   }
