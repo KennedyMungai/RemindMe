@@ -12,7 +12,9 @@ export default async function Home() {
       <Suspense fallback={<WelcomeMessageFallback />}>
         <WelcomeMessage />
       </Suspense>
-      <CollectionList />
+      <Suspense fallback={<p>Loading Collections List...</p>}>
+        <CollectionList />
+      </Suspense>
     </section>
   );
 }
