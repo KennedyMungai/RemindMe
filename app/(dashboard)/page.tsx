@@ -7,11 +7,12 @@ import { Suspense } from "react";
 
 export default async function Home() {
   return (
-    <>
+    <section className="flex flex-col gap-3">
       <Suspense fallback={<WelcomeMessageFallback />}>
         <WelcomeMessage />
       </Suspense>
-    </>
+      <CollectionList />
+    </section>
   );
 }
 
@@ -52,9 +53,11 @@ async function CollectionList() {
   });
 
   if (collections.length === 0) {
-    <Alert>
-      <AlertTitle>There are no collections yet</AlertTitle>
-      <AlertDescription>Create a collection to get started</AlertDescription>
-    </Alert>;
+    return (
+      <Alert>
+        <AlertTitle>There are no collections yet</AlertTitle>
+        <AlertDescription>Create a collection to get started</AlertDescription>
+      </Alert>
+    );
   }
 }
