@@ -1,8 +1,19 @@
+import { Skeleton } from "@/components/ui/skeleton";
 import { wait } from "@/lib/wait";
 import { currentUser } from "@clerk/nextjs";
-import Error from "next/error";
+import { Suspense } from "react";
 
 export default async function Home() {
+  return (
+    <>
+      <Suspense fallback={<WelcomeMessageFallback />}>
+        <WelcomeMessage />
+      </Suspense>
+    </>
+  );
+}
+
+const WelcomeMessage = async () => {
   const user = await currentUser();
   await wait(3000);
 
@@ -15,4 +26,8 @@ export default async function Home() {
       Welcome <br /> {user.firstName} {user.lastName}
     </section>
   );
-}
+};
+
+const WelcomeMessageFallback = () => {
+  return <Skeleton />;
+};
