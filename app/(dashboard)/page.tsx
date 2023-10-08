@@ -57,7 +57,7 @@ async function CollectionList() {
     return (
       <Alert className="flex flex-col gap-4 justify-center">
         <div className="">
-          <HiFaceFrown className="text-4xl" />
+          <HiFaceFrown className="text-4xl text-orange-600 bg:text-orange-200" />
         </div>
         <div className="">
           <AlertTitle>There are no collections yet</AlertTitle>
