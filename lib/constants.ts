@@ -8,3 +8,5 @@ export enum CollectionColors {
   metal = "bg-gradient-to-r from-slate-500 to-slate-900",
   powder = "bg-gradient-to-r from-violet-200 to-pink-200",
 }
+
+export type CollectionColor = keyof typeof CollectionColors;
