@@ -31,9 +31,9 @@ const WelcomeMessage = async () => {
   }
 
   return (
-    <section className="flex w-full justify-center items-center mb-12">
+    <section className="flex w-full justify-center items-center mb-2">
       <h1 className="text-4xl font-bold">
-        Welcome <br /> {user.firstName} {user.lastName}
+        Welcome, <br /> {user.firstName} {user.lastName}
       </h1>
     </section>
   );
@@ -60,7 +60,7 @@ async function CollectionList() {
 
   if (collections.length === 0) {
     return (
-      <div className="">
+      <div className="flex flex-col gap-4">
         <Alert className="flex flex-col gap-4 justify-center">
           <div className="">
             <HiFaceFrown className="text-4xl text-orange-600 bg:text-orange-200" />
@@ -71,10 +71,10 @@ async function CollectionList() {
               Create a collection to get started
             </AlertDescription>
           </div>
-          <div className="">
-            <CreateCollectionButton />
-          </div>
         </Alert>
+        <div className="">
+          <CreateCollectionButton />
+        </div>
       </div>
     );
   }
