@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar/NavBar";
-import ThemeSwitcher from "@/components/NavBar/ThemeSwitcher";
+import ThemeProvider from "@/components/NavBar/ThemeProvider";
 
 const opensans = Open_Sans({ subsets: ["latin"] });
 
@@ -22,13 +22,13 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={opensans.className}>
         <body>
-          <ThemeSwitcher>
+          <ThemeProvider>
             <div className="flex min-h-screen w-full flex-col items-center dark:bg-black">
               <NavBar />
               <Separator />
               {children}
             </div>
-          </ThemeSwitcher>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
