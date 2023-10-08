@@ -5,6 +5,7 @@ import { Open_Sans } from "next/font/google";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar/NavBar";
 import ThemeProvider from "@/components/NavBar/ThemeProvider";
+import { cn } from "@/lib/utils";
 
 const opensans = Open_Sans({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={opensans.className}>
+      <html lang="en" className={cn(opensans.className)}>
         <body>
           <ThemeProvider>
             <div className="flex min-h-screen w-full flex-col items-center dark:bg-black">
