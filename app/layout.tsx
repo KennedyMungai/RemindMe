@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={opensans.className}>
-        <div className="flex min-h-screen w-full flex-col items-center dark:bg-black">
-          <body>
+        <body>
+          <div className="flex min-h-screen w-full flex-col items-center dark:bg-black">
             <NavBar />
             <Separator />
             {children}
-          </body>
-        </div>
+          </div>
+        </body>
       </html>
     </ClerkProvider>
   );
