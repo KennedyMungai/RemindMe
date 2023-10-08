@@ -21,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={cn(opensans.className)}>
+      <html
+        lang="en"
+        className={cn(opensans.className, "dark")}
+        style={{ colorScheme: "dark" }}
+      >
         <body>
           <ThemeProvider>
             <div className="flex min-h-screen w-full flex-col items-center dark:bg-black">
