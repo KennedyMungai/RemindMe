@@ -1,3 +1,4 @@
+import CreateCollectionButton from "@/components/Collections/CreateCollectionButton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import prisma from "@/lib/prisma";
@@ -59,17 +60,22 @@ async function CollectionList() {
 
   if (collections.length === 0) {
     return (
-      <Alert className="flex flex-col gap-4 justify-center">
-        <div className="">
-          <HiFaceFrown className="text-4xl text-orange-600 bg:text-orange-200" />
-        </div>
-        <div className="">
-          <AlertTitle>There are no collections yet</AlertTitle>
-          <AlertDescription>
-            Create a collection to get started
-          </AlertDescription>
-        </div>
-      </Alert>
+      <div className="">
+        <Alert className="flex flex-col gap-4 justify-center">
+          <div className="">
+            <HiFaceFrown className="text-4xl text-orange-600 bg:text-orange-200" />
+          </div>
+          <div className="">
+            <AlertTitle>There are no collections yet</AlertTitle>
+            <AlertDescription>
+              Create a collection to get started
+            </AlertDescription>
+          </div>
+          <div className="">
+            <CreateCollectionButton />
+          </div>
+        </Alert>
+      </div>
     );
   }
 }
