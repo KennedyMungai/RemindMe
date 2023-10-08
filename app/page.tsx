@@ -22,12 +22,21 @@ const WelcomeMessage = async () => {
   }
 
   return (
-    <section>
-      Welcome <br /> {user.firstName} {user.lastName}
+    <section className="flex w-full">
+      <h1 className="text-4xl font-bold">
+        Welcome <br /> {user.firstName} {user.lastName}
+      </h1>
     </section>
   );
 };
 
 const WelcomeMessageFallback = () => {
-  return <Skeleton />;
+  return (
+    <section className="flex w-full">
+      <h1 className="flex flex-col gap-1 text-4xl font-bold">
+        <Skeleton className="w-[20rem] h-[3rem]" />
+        <Skeleton className="w-[20rem] h-[3rem]" />
+      </h1>
+    </section>
+  );
 };
