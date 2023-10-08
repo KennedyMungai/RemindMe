@@ -8,14 +8,16 @@ import { HiFaceFrown } from "react-icons/hi2";
 
 export default async function Home() {
   return (
-    <section className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3">
       <Suspense fallback={<WelcomeMessageFallback />}>
         <WelcomeMessage />
       </Suspense>
-      <Suspense fallback={<p>Loading Collections List...</p>}>
+      <Suspense
+        fallback={<p className="text-center">Loading Collections List...</p>}
+      >
         <CollectionList />
       </Suspense>
-    </section>
+    </div>
   );
 }
 
