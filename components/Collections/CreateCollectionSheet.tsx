@@ -54,6 +54,9 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
     try {
       await createCollection(data);
 
+      openChangeWrapper(false);
+      router.reload();
+
       toast({
         title: "Success",
         description: "Collection created successfully",
