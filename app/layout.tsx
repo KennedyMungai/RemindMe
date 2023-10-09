@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar/NavBar";
 import ThemeProvider from "@/components/NavBar/ThemeProvider";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 const opensans = Open_Sans({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
               <Separator />
               <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
                 {children}
+                <Toaster />
               </main>
             </div>
           </ThemeProvider>

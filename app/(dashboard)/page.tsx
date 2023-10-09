@@ -78,4 +78,11 @@ async function CollectionList() {
       </div>
     );
   }
+
+  return (
+    <div className="flex flex-col justify-center gap-1">
+      Collections: {collections.length}
+      <CreateCollectionButton />
+    </div>
+  );
 }
