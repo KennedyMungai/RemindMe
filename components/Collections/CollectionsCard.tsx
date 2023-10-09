@@ -13,6 +13,7 @@ import {
 import { Progress } from "../ui/progress";
 import { Separator } from "../ui/separator";
 import { AiOutlinePlus } from "react-icons/ai";
+import { FiTrash } from "react-icons/fi";
 
 type Props = {
   collection: Collection;
@@ -57,6 +58,9 @@ const CollectionsCard = ({ collection }: Props) => {
           <div className="">
             <Button size={"icon"} variant={"ghost"}>
               <AiOutlinePlus className={"h-4 w-4"} />
+            </Button>
+            <Button size={"icon"} variant={"ghost"}>
+              <FiTrash className={"h-4 w-4"} />
             </Button>
           </div>
         </footer>
