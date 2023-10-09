@@ -103,7 +103,9 @@ const CollectionsCard = ({ collection }: Props) => {
                 </AlertDialogDescription>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction>Proceed</AlertDialogAction>
+                  <AlertDialogAction onClick={() => removeCollection()}>
+                    Proceed
+                  </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
