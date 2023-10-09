@@ -25,6 +25,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "../ui/alert-dialog";
+import { deleteCollection } from "@/actions/collection";
+import { toast } from "../ui/use-toast";
 
 type Props = {
   collection: Collection;
@@ -34,6 +36,24 @@ const tasks: string[] = ["sugar", "plum"];
 
 const CollectionsCard = ({ collection }: Props) => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const removeCollection = async () => {
+    try {
+      await deleteCollection(collection.id);
+
+      toast({
+        title: "Successfully deleted",
+        description: "Collection deleted successfully",
+        variant: "destructive",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: "Failed to delete the collection, please try again",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
