@@ -5,6 +5,7 @@ import { Collapsible, CollapsibleTrigger } from "../ui/collapsible";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { CollectionColor, CollectionColors } from "@/lib/constants";
+import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons";
 
 type Props = {
   collection: Collection;
@@ -23,7 +24,9 @@ const CollectionsCard = ({ collection }: Props) => {
             CollectionColors[collection.color as CollectionColor]
           )}
         >
-          {collection.name}
+          <span className="text-white font-bold">{collection.name}</span>
+          {!isOpen && <CaretDownIcon />}
+          {isOpen && <CaretUpIcon />}
         </Button>
       </CollapsibleTrigger>
     </Collapsible>
