@@ -17,6 +17,7 @@ import { FiTrash } from "react-icons/fi";
 import { Alert } from "../ui/alert";
 import {
   AlertDialog,
+  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogFooter,
@@ -77,6 +78,7 @@ const CollectionsCard = ({ collection }: Props) => {
                 Hello
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Proceed</AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
