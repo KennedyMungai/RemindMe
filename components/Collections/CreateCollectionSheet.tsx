@@ -123,7 +123,13 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
         </Form>
         <div className="flex flex-col py-4 gap-3">
           <Separator />
-          <Button variant={"outline"} onClick={form.handleSubmit(onSubmit)}>
+          <Button
+            variant={"outline"}
+            onClick={form.handleSubmit(onSubmit)}
+            className={cn(
+              CollectionColors[form.getValues("color") as CollectionColor]
+            )}
+          >
             Confirm
           </Button>
         </div>
