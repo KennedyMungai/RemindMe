@@ -17,7 +17,9 @@ import { FiTrash } from "react-icons/fi";
 import { Alert } from "../ui/alert";
 import {
   AlertDialog,
+  AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogFooter,
   AlertDialogTrigger,
 } from "../ui/alert-dialog";
 
@@ -71,7 +73,12 @@ const CollectionsCard = ({ collection }: Props) => {
                   <FiTrash className={"h-4 w-4"} />
                 </Button>
               </AlertDialogTrigger>
-              <AlertDialogContent>Hello</AlertDialogContent>
+              <AlertDialogContent>
+                Hello
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                </AlertDialogFooter>
+              </AlertDialogContent>
             </AlertDialog>
           </div>
         </footer>
