@@ -32,6 +32,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "../ui/sheet";
+import { createCollection } from "@/actions/collection";
 
 type Props = {
   open: boolean;
@@ -44,8 +45,13 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
     resolver: zodResolver(createCollectionSchema),
   });
 
-  const onSubmit = (data: CreateCollectionSchemaType) => {
-    console.log("SUBMITTED", data);
+  const onSubmit = async (data: CreateCollectionSchemaType) => {
+    try {
+      await createCollection(data);
+    } catch (error: any) {
+      // TODO Show a toast
+      alert(error.message);
+    }
   };
 
   const openChangeWrapper = (open: boolean) => {
