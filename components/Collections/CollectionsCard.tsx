@@ -12,6 +12,7 @@ import {
 } from "../ui/collapsible";
 import { Progress } from "../ui/progress";
 import { Separator } from "../ui/separator";
+import { AiOutlinePlus } from "react-icons/ai";
 
 type Props = {
   collection: Collection;
@@ -53,6 +54,11 @@ const CollectionsCard = ({ collection }: Props) => {
         <Separator />
         <footer className="h-[3rem] p-2 text-xs text-neutral-500 flex justify-between items-center">
           <p>Created at {collection.createdAt.toUTCString()}</p>
+          <div className="">
+            <Button size={"icon"} variant={"ghost"}>
+              <AiOutlinePlus className={"h-4 w-4"} />
+            </Button>
+          </div>
         </footer>
       </CollapsibleContent>
     </Collapsible>
