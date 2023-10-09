@@ -21,6 +21,7 @@ import {
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogFooter,
+  AlertDialogTitle,
   AlertDialogTrigger,
 } from "../ui/alert-dialog";
 
@@ -75,7 +76,7 @@ const CollectionsCard = ({ collection }: Props) => {
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
-                Hello
+                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
                   <AlertDialogAction>Proceed</AlertDialogAction>
