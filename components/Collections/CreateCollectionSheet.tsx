@@ -126,7 +126,8 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
             variant={"outline"}
             onClick={form.handleSubmit(onSubmit)}
             className={cn(
-              CollectionColors[form.getValues("color") as CollectionColor]
+              form.watch("color") &&
+                CollectionColors[form.getValues("color") as CollectionColor]
             )}
           >
             Confirm
