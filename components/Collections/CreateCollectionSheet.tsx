@@ -151,6 +151,7 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
               form.watch("color") &&
                 CollectionColors[form.getValues("color") as CollectionColor]
             )}
+            disabled={form.formState.isSubmitting}
           >
             Confirm
           </Button>
