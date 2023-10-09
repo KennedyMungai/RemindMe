@@ -41,7 +41,7 @@ const CollectionsCard = ({ collection }: Props) => {
         {tasks.length === 0 && <div>No Tasks</div>}
         {tasks.length > 0 && (
           <>
-            <Progress />
+            <Progress className="rounded-none" value={45} />
             <div className="">
               {tasks.map((task) => {
                 return <div key={task}>Mocked Task</div>;
