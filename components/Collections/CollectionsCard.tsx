@@ -14,6 +14,12 @@ import { Progress } from "../ui/progress";
 import { Separator } from "../ui/separator";
 import { AiOutlinePlus } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
+import { Alert } from "../ui/alert";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTrigger,
+} from "../ui/alert-dialog";
 
 type Props = {
   collection: Collection;
@@ -55,13 +61,18 @@ const CollectionsCard = ({ collection }: Props) => {
         <Separator />
         <footer className="h-[3rem] p-2 text-xs text-neutral-500 flex justify-between items-center">
           <p>Created at {collection.createdAt.toUTCString()}</p>
-          <div className="">
+          <div className="flex flex-row">
             <Button size={"icon"} variant={"ghost"}>
               <AiOutlinePlus className={"h-4 w-4"} />
             </Button>
-            <Button size={"icon"} variant={"ghost"}>
-              <FiTrash className={"h-4 w-4"} />
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button size={"icon"} variant={"ghost"}>
+                  <FiTrash className={"h-4 w-4"} />
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>Hello</AlertDialogContent>
+            </AlertDialog>
           </div>
         </footer>
       </CollapsibleContent>
