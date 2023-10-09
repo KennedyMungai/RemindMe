@@ -16,7 +16,7 @@ type Props = {
   collection: Collection;
 };
 
-const tasks: string[] = [];
+const tasks: string[] = ["sugar", "plum"];
 
 const CollectionsCard = ({ collection }: Props) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -42,7 +42,7 @@ const CollectionsCard = ({ collection }: Props) => {
         {tasks.length > 0 && (
           <>
             <Progress className="rounded-none" value={45} />
-            <div className="">
+            <div className="flex flex-col gap-2">
               {tasks.map((task) => {
                 return <div key={task}>Mocked Task</div>;
               })}
