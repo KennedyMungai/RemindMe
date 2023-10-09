@@ -1,17 +1,12 @@
-import React from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "../ui/sheet";
-import { useForm } from "react-hook-form";
+import { CollectionColor, CollectionColors } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import {
   CreateCollectionSchemaType,
   createCollectionSchema,
 } from "@/schema/createCollection";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Button } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -29,10 +24,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { CollectionColor, CollectionColors } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "../ui/sheet";
 
 type Props = {
   open: boolean;
