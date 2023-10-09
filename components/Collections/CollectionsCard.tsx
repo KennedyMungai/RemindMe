@@ -25,8 +25,8 @@ const CollectionsCard = ({ collection }: Props) => {
           )}
         >
           <span className="text-white font-bold">{collection.name}</span>
-          {!isOpen && <CaretDownIcon />}
-          {isOpen && <CaretUpIcon />}
+          {!isOpen && <CaretDownIcon className="h-6 w-6" />}
+          {isOpen && <CaretUpIcon className="h-6 w-6" />}
         </Button>
       </CollapsibleTrigger>
     </Collapsible>
