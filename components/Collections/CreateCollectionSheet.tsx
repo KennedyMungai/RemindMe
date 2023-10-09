@@ -33,6 +33,7 @@ import {
   SheetTitle,
 } from "../ui/sheet";
 import { createCollection } from "@/actions/collection";
+import { toast } from "../ui/use-toast";
 
 type Props = {
   open: boolean;
@@ -49,7 +50,10 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
     try {
       await createCollection(data);
     } catch (error: any) {
-      // TODO Show a toast
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again",
+      });
       alert(error.message);
     }
   };
