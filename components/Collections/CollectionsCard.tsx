@@ -16,7 +16,7 @@ const CollectionsCard = ({ collection }: Props) => {
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger>
+      <CollapsibleTrigger asChild>
         <Button
           variant={"ghost"}
           className={cn(
