@@ -59,7 +59,10 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
           </SheetDescription>
         </SheetHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-4 flex flex-col"
+          >
             <FormField
               control={form.control}
               name="name"
