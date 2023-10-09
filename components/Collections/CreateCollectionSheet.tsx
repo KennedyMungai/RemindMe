@@ -31,6 +31,8 @@ import {
 } from "../ui/select";
 import { CollectionColor, CollectionColors } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
 
 type Props = {
   open: boolean;
@@ -116,6 +118,8 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
             />
           </form>
         </Form>
+        <Separator />
+        <Button>Confirm</Button>
       </SheetContent>
     </Sheet>
   );
