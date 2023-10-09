@@ -27,7 +27,7 @@ export const deleteCollection = async (id: number) => {
     throw new Error("User not found");
   }
 
-  await wait(5000);
+  // await wait(5000);
 
   return await prisma.collection.delete({
     where: {
