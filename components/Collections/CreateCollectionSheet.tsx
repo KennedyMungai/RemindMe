@@ -49,10 +49,17 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
   const onSubmit = async (data: CreateCollectionSchemaType) => {
     try {
       await createCollection(data);
+
+      toast({
+        title: "Success",
+        description: "Collection created successfully",
+        variant: "destructive",
+      });
     } catch (error: any) {
       toast({
         title: "Error",
         description: "Something went wrong. Please try again",
+        variant: "destructive",
       });
       alert(error.message);
     }
