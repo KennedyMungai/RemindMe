@@ -118,8 +118,10 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
             />
           </form>
         </Form>
-        <Separator />
-        <Button>Confirm</Button>
+        <div className="flex flex-col py-4 gap-3">
+          <Separator />
+          <Button variant={"outline"}>Confirm</Button>
+        </div>
       </SheetContent>
     </Sheet>
   );
