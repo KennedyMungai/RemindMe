@@ -48,8 +48,13 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
     console.log("SUBMITTED", data);
   };
 
+  const openChangeWrapper = (open: boolean) => {
+    form.reset();
+    onOpenChange(open);
+  };
+
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={openChangeWrapper}>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Add a new collection</SheetTitle>
