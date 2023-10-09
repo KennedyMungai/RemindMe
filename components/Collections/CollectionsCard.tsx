@@ -19,7 +19,7 @@ const CollectionsCard = ({ collection }: Props) => {
         <Button
           variant={"ghost"}
           className={cn(
-            "flex w-full justify-between p-6",
+            "flex w-[20rem] justify-between p-6",
             CollectionColors[collection.color as CollectionColor]
           )}
         >
