@@ -1,15 +1,15 @@
 "use client";
+import { CollectionColor, CollectionColors } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { Collection } from "@prisma/client";
-import React, { useState } from "react";
+import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons";
+import { useState } from "react";
+import { Button } from "../ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../ui/collapsible";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
-import { CollectionColor, CollectionColors } from "@/lib/constants";
-import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons";
 import { Progress } from "../ui/progress";
 import { Separator } from "../ui/separator";
 
