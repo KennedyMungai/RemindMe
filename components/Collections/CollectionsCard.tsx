@@ -3,7 +3,7 @@ import { CollectionColor, CollectionColors } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Collection } from "@prisma/client";
 import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { Button } from "../ui/button";
 import {
   Collapsible,
@@ -36,6 +36,8 @@ const tasks: string[] = ["sugar", "plum"];
 
 const CollectionsCard = ({ collection }: Props) => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const [isLoading, startTransition] = useTransition();
 
   const removeCollection = async () => {
     try {
@@ -86,30 +88,38 @@ const CollectionsCard = ({ collection }: Props) => {
         <Separator />
         <footer className="h-[3rem] p-2 text-xs text-neutral-500 flex justify-between items-center">
           <p>Created at {collection.createdAt.toUTCString()}</p>
-          <div className="flex flex-row">
-            <Button size={"icon"} variant={"ghost"}>
-              <AiOutlinePlus className={"h-4 w-4"} />
-            </Button>
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button size={"icon"} variant={"ghost"}>
-                  <FiTrash className={"h-4 w-4"} />
-                </Button>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  This action cannot be undone
-                </AlertDialogDescription>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={() => removeCollection()}>
-                    Proceed
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          </div>
+          {isLoading && <p>Deleting...</p>}
+          {!isLoading && (
+            <div className="flex flex-row">
+              <Button size={"icon"} variant={"ghost"}>
+                <AiOutlinePlus className={"h-4 w-4"} />
+              </Button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button size={"icon"} variant={"ghost"}>
+                    <FiTrash className={"h-4 w-4"} />
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone
+                  </AlertDialogDescription>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction
+                      onClick={() => {
+                        startTransition(removeCollection);
+                        removeCollection();
+                      }}
+                    >
+                      Proceed
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </div>
+          )}
         </footer>
       </CollapsibleContent>
     </Collapsible>
