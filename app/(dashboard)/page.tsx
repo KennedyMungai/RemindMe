@@ -1,3 +1,4 @@
+import CollectionsCard from "@/components/Collections/CollectionsCard";
 import CreateCollectionButton from "@/components/Collections/CreateCollectionButton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -83,6 +84,9 @@ async function CollectionList() {
     <div className="flex flex-col justify-center gap-1">
       Collections: {collections.length}
       <CreateCollectionButton />
+      {collections.map((collection) => {
+        return <CollectionsCard key={collection.id} collection={collection} />;
+      })}
     </div>
   );
 }
