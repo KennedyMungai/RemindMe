@@ -34,6 +34,7 @@ import {
 } from "../ui/sheet";
 import { createCollection } from "@/actions/collection";
 import { toast } from "../ui/use-toast";
+import { ReloadIcon } from "@radix-ui/react-icons";
 
 type Props = {
   open: boolean;
@@ -154,6 +155,9 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
             disabled={form.formState.isSubmitting}
           >
             Confirm
+            {form.formState.isSubmitting && (
+              <ReloadIcon className="ml-2 h-4 w-4 animate-spin" />
+            )}
           </Button>
         </div>
       </SheetContent>
