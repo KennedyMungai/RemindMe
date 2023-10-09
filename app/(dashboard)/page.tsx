@@ -84,9 +84,13 @@ async function CollectionList() {
     <div className="flex flex-col justify-center gap-1">
       Collections: {collections.length}
       <CreateCollectionButton />
-      {collections.map((collection) => {
-        return <CollectionsCard key={collection.id} collection={collection} />;
-      })}
+      <div className="flex flex-col gap-1">
+        {collections.map((collection) => {
+          return (
+            <CollectionsCard key={collection.id} collection={collection} />
+          );
+        })}
+      </div>
     </div>
   );
 }
