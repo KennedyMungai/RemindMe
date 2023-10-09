@@ -28,6 +28,7 @@ const CollectionsCard = ({ collection }: Props) => {
           variant={"ghost"}
           className={cn(
             "flex w-[20rem] justify-between p-6",
+            isOpen && "rounded-b-none",
             CollectionColors[collection.color as CollectionColor]
           )}
         >
