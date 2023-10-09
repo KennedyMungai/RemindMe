@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { CollectionColor, CollectionColors } from "@/lib/constants";
 import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons";
 import { Progress } from "../ui/progress";
+import { Separator } from "../ui/separator";
 
 type Props = {
   collection: Collection;
@@ -49,6 +50,10 @@ const CollectionsCard = ({ collection }: Props) => {
             </div>
           </>
         )}
+        <Separator />
+        <footer className="h-[3rem] p-2 text-xs text-neutral-500 flex justify-between items-center">
+          <p>Created at {collection.createdAt.toUTCString()}</p>
+        </footer>
       </CollapsibleContent>
     </Collapsible>
   );
