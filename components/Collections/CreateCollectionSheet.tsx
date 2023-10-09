@@ -48,6 +48,8 @@ const CreateCollectionSheet = ({ open, onOpenChange }: Props) => {
     resolver: zodResolver(createCollectionSchema),
   });
 
+  const router = useRouter();
+
   const onSubmit = async (data: CreateCollectionSchemaType) => {
     try {
       await createCollection(data);
